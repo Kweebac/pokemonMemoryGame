@@ -1,5 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Pokemon from "./components/Pokemon";
+import Scores from "./components/Scores";
 
 export default function App() {
   const [pokemon, setPokemon] = useState({ name: undefined, url: undefined });
@@ -26,10 +28,8 @@ export default function App() {
 
   return (
     <>
-      <h1>{pokemon.name}</h1>
-      <img src={pokemon.url} alt={pokemon.name} />
-      <button onClick={setRandomPokemon}>✓</button>
-      <button onClick={setRandomPokemon}>✕</button>
+      <Pokemon pokemon={pokemon} />
+      <Scores pokemon={pokemon} setRandomPokemon={setRandomPokemon} />
     </>
   );
 }
