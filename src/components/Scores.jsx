@@ -24,24 +24,28 @@ export default function Scores({ pokemon, setRandomPokemon }) {
 
   return (
     <>
-      <button
-        onClick={() => {
-          setRandomPokemon();
-          changeScores(true);
-        }}
-      >
-        ✓
-      </button>
-      <button
-        onClick={() => {
-          setRandomPokemon();
-          changeScores(false);
-        }}
-      >
-        ✕
-      </button>
-      <div>Score: {score}</div>
-      <div>Best score: {bestScore}</div>
+      <div className="buttons">
+        <button
+          onClick={() => {
+            setRandomPokemon();
+            changeScores(true);
+          }}
+        >
+          ✓
+        </button>
+        <button
+          onClick={() => {
+            setRandomPokemon();
+            changeScores(false);
+          }}
+        >
+          ✕
+        </button>
+      </div>
+      <div className="score">
+        <div>Score: {score}</div>
+        <div>Best score: {bestScore}</div>
+      </div>
     </>
   );
 }
