@@ -34,7 +34,7 @@ export default function Scores({ pokemon, setRandomPokemon }) {
           ✓
         </button>
         <button
-          onClick={() => {
+          onClick={() => { 
             setRandomPokemon();
             changeScores(false);
           }}
