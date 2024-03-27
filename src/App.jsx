@@ -5,7 +5,6 @@ import Scores from "./components/Scores";
 
 export default function App() {
   const [pokemon, setPokemon] = useState({ name: undefined, url: undefined });
-  console.log(pokemon); // logs the randomly selected pokemon
 
   async function setRandomPokemon() {
     try {
@@ -24,7 +23,9 @@ export default function App() {
   }
 
   useEffect(() => {
-    setRandomPokemon();
+    (async () => {
+      await setRandomPokemon();
+    })();
   }, []);
 
   return (
